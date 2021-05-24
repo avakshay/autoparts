@@ -205,10 +205,10 @@
                                     {% if already %}
                                  <a href="{% url 'showcart'%}" class="btn btn-warning shadow px-5 py-2 ms-4">GO to Cart</a>
                                     {% else%}
-                                      <form action="/add_to_cart" style="display: inline;">
-                                       <input type="hidden" name="prod_id" value={{product.id}} id="prod_id">
-                                       <button class="add-to-cart btn btn-success" type="submit" style="margin-right: 10px;">Add to Cart</button>
-                                      </form>
+                                    <form action="/add_to_cart" style="display: inline;">
+                                        <input type="hidden" name="prod_id" value={{i.id}} id="prod_id">
+                                        <button class="add-to-cart btn btn-default" type="submit" style="margin-right: 10px;">Add to Cart</button>
+                                       </form>
                                       {% endif%}
                                     <a href="{% url 'product_details' i.id %}" class="btn btn-primary" role="button">See Details</a></p>
                             </div>
