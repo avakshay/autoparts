@@ -1,0 +1,291 @@
+{%extends 'base.html'%}
+{%load static%}
+
+     {%block title%} INTERIOR {%endblock title%}
+     {%block link%}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+      {%endblock link%}
+
+      {%block style%}
+    <style>
+        .card-counter{
+            box-shadow: 2px 2px 10px #DADADA;
+            margin: 5px;
+            padding: 20px 10px;
+            background-color: #fff;
+            height: 100px;
+            border-radius: 5px;
+            transition: .3s linear all;
+          }
+        
+          .card-counter:hover{
+            box-shadow: 4px 4px 20px #DADADA;
+            transition: .3s linear all;
+          }
+        
+          .card-counter.primary{
+            background-color: #007bff;
+            color: #FFF;
+          }
+        
+          .card-counter.danger{
+            background-color: #ef5350;
+            color: #FFF;
+          }  
+        
+          .card-counter.success{
+            background-color: #66bb6a;
+            color: #FFF;
+          }  
+        
+          .card-counter.info{
+            background-color: #26c6da;
+            color: #FFF;
+          }  
+        
+          .card-counter i{
+            font-size: 5em;
+            opacity: 0.2;
+          }
+        
+          .card-counter .count-numbers{
+            position: absolute;
+            right: 35px;
+            top: 20px;
+            font-size: 32px;
+            display: block;
+          }
+        
+          .card-counter .count-name{
+            position: absolute;
+            right: 35px;
+            top: 65px;
+            font-style: italic;
+            text-transform: capitalize;
+            opacity: 0.5;
+            display: block;
+            font-size: 18px;
+          }
+    </style>
+
+    {%endblock style%}
+{% block main%}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-lg offer-box text-center">
+
+
+              INTERIOR
+               
+                </div>
+            </div>
+            <div class="col-md-12">
+
+                <div class="col-md-3">
+                    <div>
+                    <a href="{% url 'category'%}" class="list-group-item active">Interior
+                    </a>
+                    <ul class="list-group">
+
+                        <li class="list-group-item"><a href="{% url 'sub_category'%}">Engine Parts</a> 
+                            <span class="label label-primary pull-right">10</span>
+                        </li>
+                        <li class="list-group-item"><a href="{% url 'sub_category'%}">Filters</a>
+                            <span class="label label-success pull-right">34</span>
+                        </li>
+                        <li class="list-group-item"><a href="#">Air conditioning</a>
+                            <span class="label label-danger pull-right">4</span>
+                        </li>
+                        <li class="list-group-item"><a href="#">Clutch System</a>
+                            <span class="label label-info pull-right">20</span>
+                        </li>
+                        <li class="list-group-item"><a href="#">Steering</a>
+                            <span class="label label-success pull-right">342</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success"><a href="#">New Offer's Coming </a></li>
+                        <li class="list-group-item list-group-item-info"><a href="#">New Products Added</a></li>
+                        <li class="list-group-item list-group-item-warning"><a href="#">Ending Soon Offers</a></li>
+                        <li class="list-group-item list-group-item-danger"><a href="#">Just Ended Offers</a></li>
+                    </ul>
+                </div>
+            </div>
+                <!-- /.div -->
+                <div class="col-md-9">
+                    <div>
+                        <ol class="breadcrumb">
+                            <li><a href="{% url 'home'%}">Home</a></li>
+                            <li class="active"> Interior</li>
+                        </ol>
+                        <div>
+                    </div>
+
+                    <div class="container col-md-12">
+                        <div class="row ">
+                        <div class="col-md-3">
+                          <div class="card-counter primary">
+                            <!-- <i class="fa fa-code-fork"></i> -->
+                            <i class="fa fa-cogs" aria-hidden="true"></i>
+                            
+                            <span class="count-numbers">10</span>
+                            <span class="count-name">Engien Parts</span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <div class="card-counter danger">
+                            <i class="fa fa-filter" aria-hidden="true"></i>
+                            <span class="count-numbers">34</span>
+                            <span class="count-name">Filters</span>
+                        </div>
+                    </div>
+                    
+                        <div class="col-md-3">
+                          <div class="card-counter success">
+                            <i class="fa fa-database"></i>
+                            <span class="count-numbers">4</span>
+                            <span class="count-name">AC</span>
+                          </div>
+                        </div>
+                    
+                        <div class="col-md-3">
+                          <div class="card-counter info">
+                            <i class="fa fa-users"></i>
+                            <span class="count-numbers">20</span>
+                            <span class="count-name">Clutch System</span>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="card-counter info">
+                            <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                            <span class="count-numbers">342</span>
+                            <span class="count-name">Steering</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="btn-group alg-right-pad">
+                            <button type="button" class="btn btn-default"><strong>1235  </strong>items</button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                                    Sort Products &nbsp;
+          <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">By Price Low</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">By Price High</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">By Popularity</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">By Reviews</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                            <div class="thumbnail product-box">
+                                <img src="{% static 'img/wheel.jpg' %}" alt="" />
+                                <div class="caption">
+                                    <h3><a href="{% url 'product_details'%}">Wheel </a></h3>
+                                    <p>Price : <strong>$ 300</strong>  </p>
+                                    <p><a href="{% url 'product_details'%}">Ptional dismiss button </a></p>
+                                    <p>Ptional dismiss button in tional dismiss button in   </p>
+                                    <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{% url 'product_details'%}" class="btn btn-primary" role="button">See Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                            <div class="thumbnail product-box">
+                                <img src="{% static 'img/wheel.jpg' %}" alt="" />
+                                <div class="caption">
+                                    <h3><a href="{% url 'product_details'%}">Wheel </a></h3>
+                                    <p>Price : <strong>$ 300</strong>  </p>
+                                    <p><a href="{% url 'product_details'%}">Ptional dismiss button </a></p>
+                                    <p>Ptional dismiss button in tional dismiss button in   </p>
+                                    <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{% url 'product_details'%}" class="btn btn-primary" role="button">See Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                            <div class="thumbnail product-box">
+                                <img src="{% static 'img/wheel.jpg' %}" alt="" />
+                                <div class="caption">
+                                    <h3><a href="#">Wheel </a></h3>
+                                    <p>Price : <strong>$ 300</strong>  </p>
+                                    <p><a href="#">Ptional dismiss button </a></p>
+                                    <p>Ptional dismiss button in tional dismiss button in   </p>
+                                    <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                            <div class="thumbnail product-box">
+                                <img src="{% static 'img/wheel.jpg' %}" alt="" />
+                                <div class="caption">
+                                    <h3><a href="#">Wheel </a></h3>
+                                    <p>Price : <strong>$ 300</strong>  </p>
+                                    <p><a href="#">Ptional dismiss button </a></p>
+                                    <p>Ptional dismiss button in tional dismiss button in   </p>
+                                    <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                            <div class="thumbnail product-box">
+                                <img src="{% static 'img/wheel.jpg' %}" alt="" />
+                                <div class="caption">
+                                    <h3><a href="#">Wheel </a></h3>
+                                    <p>Price : <strong>$ 300</strong>  </p>
+                                    <p><a href="#">Ptional dismiss button </a></p>
+                                    <p>Ptional dismiss button in tional dismiss button in   </p>
+                                    <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                            <div class="thumbnail product-box">
+                                <img src="{% static 'img/wheel.jpg' %}" alt="" />
+                                <div class="caption">
+                                    <h3><a href="#">Wheel </a></h3>
+                                    <p>Price : <strong>$ 300</strong>  </p>
+                                    <p><a href="#">Ptional dismiss button </a></p>
+                                    <p>Ptional dismiss button in tional dismiss button in   </p>
+                                    <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="#" class="btn btn-primary" role="button">See Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+    </div>
+
+            </div>
+        </div>
+        </div>
+    
+    {%endblock main%}
+
+
+    {%block script%}    
+    <script>
+        $(function () {
+
+            $('#mi-slider').catslider();
+
+        });
+		</script>
+
+    {%endblock script%}    

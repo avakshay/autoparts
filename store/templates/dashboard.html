@@ -1,0 +1,32 @@
+{%extends 'base.html'%}    
+{% load static%}
+{%block link%}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="{% static 'css/style.css' %}" rel="stylesheet" />
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+{%endblock link%}
+
+{%block script%}
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+{%endblock script%}
+
+        
+{%block style%}
+
+
+{% endblock style%}
+{% block title%}Sales Report
+{% endblock title%}
+  {%block main%}
+{% if request.user.is_superuser%}
+<div>
+    <center>
+
+        <iframe width="1224" height="680" src="https://app.powerbi.com/view?r=eyJrIjoiZmYyMDM2ZTYtOWFjMi00NTUzLWFkYjktNzZlNjNkYjUzNGUxIiwidCI6ImMwOWFmYjc1LTFjZjgtNDZjYS05YzVlLTBhMDFiZmJkODZmMiJ9" frameborder="0" allowFullScreen="true"></iframe>
+    </center>
+    </div>
+    {%endif%}
+{%endblock main%}
+

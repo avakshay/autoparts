@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{% load static%}
+{% block title%} Cart {% endblock title%}
+{%block link%}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="{% static 'css/style.css' %}" rel="stylesheet" />
+
+{%endblock link%}
+{%block script%}
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{%endblock script%}
+
+{%block style%}
+
+{%endblock style%}  
+{%block main%}
+<center style="margin-top: 10px;"><h2>You have no Product in your Cart</h2></center>
+<center style="margin: 30px 0px;">
+    <img src="{% static 'img/empty.png' %}" alt="empty.png">
+</center>
+{% endblock main%}

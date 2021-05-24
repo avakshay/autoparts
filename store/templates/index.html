@@ -1,0 +1,366 @@
+{% extends 'base.html'%}
+{% load static %}  
+
+
+{% block title%}Autopart Warehouse {%endblock title%}
+   
+
+   {%block main%}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="well well-lg offer-box text-center">
+
+
+                   Today's Offer : &nbsp; <span class="glyphicon glyphicon-cog"></span>&nbsp;10 % off  on purchase of $ 500                 
+              
+               
+                </div>
+                <div class="main box-border">
+                    <div id="mi-slider" class="mi-slider">
+                        <ul>
+
+                            {% for int in inter%}
+                            <li><a href="{% url 'product_details' int.id %}">
+                                <img src="{{int.product_image.url}}" alt="img01"><h4>{{int.title}}</h4>
+                            </a></li>
+                            {% endfor%}
+                        </ul>
+                        <ul>
+                            {% for ass in acces%}
+                            <li><a href="{% url 'product_details' ass.id %}">
+                                <img src="{{ass.product_image.url}}" alt="img05"><h4>{{ass.title}}</h4>
+                            </a></li>
+                            {% endfor%}
+                        </ul>
+                        <ul>
+                            {% for ext in exter%}
+                            <li><a href="{% url 'product_details' ext.id %}">
+                                <img src="{{ext.product_image.url}}" alt="img05"><h4>{{ext.title}}</h4>
+                            </a></li>
+                            {% endfor%}
+                        </ul>
+                        
+                        <nav>
+                            <a href="#">Interior</a>
+                            <a href="#">Accessories</a>
+                            <a href="#">Exterior</a>
+                        </nav>
+                    </div>
+                    
+                </div>          
+                <br />
+            </div>
+            <!-- /.col -->
+            
+            <div class="col-md-3 text-center">
+                <div class=" col-md-12 col-sm-6 col-xs-6" >
+                    <div class="offer-text">
+                        30% off here
+                    </div>
+                    <div class="thumbnail product-box">
+                        <img src="{%static 'img/wheel.jpg'%}" alt="" />
+                        <div class="caption">
+                            <h3><a href="#">Wheel </a></h3>
+                            <p><a href="#">Ptional dismiss button </a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-md-12 col-sm-6 col-xs-6">
+                    <div class="offer-text2">
+                        30% off here
+                    </div>
+                    <div class="thumbnail product-box">
+                        <img src="{%static 'img/wheel.jpg'%}" alt="" />
+                        <div class="caption">
+                            <h3><a href="#">Wheel </a></h3>
+                            <p><a href="#">Ptional dismiss button </a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-md-3">
+                <div>
+                    <a href="{% url 'interior'%}" class="list-group-item active">Interior
+                    </a>
+                    <ul class="list-group">
+
+                        <li class="list-group-item"><a href="{% url 'interiordata' 'engine'%}">Engine Parts</a> 
+                            <span class="label label-primary pull-right">10</span>
+                        </li>
+                        <li class="list-group-item"><a href="{% url 'interiordata' 'filters'%}">Filters</a>
+                            <span class="label label-success pull-right">34</span>
+                        </li>
+                        <li class="list-group-item"><a href="{% url 'interiordata' 'ac'%}">Air conditioning</a>
+                            <span class="label label-danger pull-right">4</span>
+                        </li>
+                        <li class="list-group-item"><a href="{% url 'interiordata' 'clutch'%}">Clutch System</a>
+                            <span class="label label-info pull-right">20</span>
+                        </li>
+                        <li class="list-group-item"><a href="{% url 'interiordata' 'steering'%}">Steering</a>
+                            <span class="label label-success pull-right">342</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.div -->
+                <div>
+                    <a href="{% url 'accessories'%}" class="list-group-item active list-group-item-success">Accessories
+                    </a>
+                    <ul class="list-group">
+
+                        <li class="list-group-item"><a href="{% url 'accessoriesdata' 'seat_cover' %}">Seat-Cover</a> 
+                            <span class="label label-primary pull-right">1300</span>
+                        </li>
+                        <li class="list-group-item"><a href="{% url 'accessoriesdata' 'sound_system' %}">Sound-System</a>
+                            <span class="label label-success pull-right">340</span>
+                        </li>
+                        <li class="list-group-item"><a href="{% url 'accessoriesdata' 'perfumes' %}">Perfumes</a>
+                            <span class="label label-danger pull-right">744</span>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- /.div -->
+                <div>
+                    <a href="{% url 'exterior'%}" class="list-group-item active">Exterior
+                    </a>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="{% url 'exteriordata' 'wheel' %}">Wheel</a> 
+                            <span class="label label-primary pull-right">410</span>
+                        </li>
+                        <li class="list-group-item"><a href="{% url 'exteriordata' 'buffer' %}">Buffer</a>
+                            <span class="label label-success pull-right">434</span>
+                        </li>
+                        <li class="list-group-item"><a href="{% url 'exteriordata' 'break' %}">Break System</a>
+                            <span class="label label-danger pull-right">45</span>
+                        </li>
+                        <li class="list-group-item"><a href="{% url 'exteriordata' 'wind_screen' %}">Wind ScreenSystem</a>
+                            <span class="label label-info pull-right">60</span>
+                        </li>
+                        <li class="list-group-item"><a href="{% url 'exteriordata' 'suspension' %}">Suspension</a>
+                            <span class="label label-success pull-right">42</span>
+                        </li>
+                        <li class="list-group-item"><a href="{% url 'exteriordata' 'body_parts' %}">Body-Parts</a>
+                            <span class="label label-success pull-right">342</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.div -->
+                <div>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success"><a href="#">New Offer's Coming </a></li>
+                        <li class="list-group-item list-group-item-info"><a href="#">New Products Added</a></li>
+                        <li class="list-group-item list-group-item-warning"><a href="#">Ending Soon Offers</a></li>
+                        <li class="list-group-item list-group-item-danger"><a href="#">Just Ended Offers</a></li>
+                    </ul>
+                </div>
+                <!-- /.div -->
+                
+                <!-- /.div -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-9">
+                <div>
+                    <ol class="breadcrumb">
+                        <li><a href="{% url 'home'%}">Home</a></li>
+                        <li class="active">Interior</li>
+                    </ol>
+                </div>
+                <!-- /.div -->
+                <div class="row">
+                    <div class="btn-group alg-right-pad">
+                        <button type="button" class="btn btn-default"><strong>1235  </strong>items</button>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                                Sort Products &nbsp;
+      <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">By Price Low</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">By Price High</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">By Popularity</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">By Reviews</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    {% for i in interior%}
+                    <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                        <div class="thumbnail product-box">
+                            <img src="{{i.product_image.url}}" alt="" style="height: 150px; width:auto"/>
+                            <div class="caption">
+                                <h3><a href="{% url 'product_details' i.id %}">{{i.title}}</a></h3>
+                                <p>Price : <strong>$ {{i.discounted_price}}</strong>  </p>
+                                <p><a href="{% url 'product_details' i.id %}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, laborum! </a></p>
+                                <p>  </p>
+                                    {% if already %}
+                                 <a href="{% url 'showcart'%}" class="btn btn-warning shadow px-5 py-2 ms-4">GO to Cart</a>
+                                    {% else%}
+                                      <form action="/add_to_cart" style="display: inline;">
+                                       <input type="hidden" name="prod_id" value={{product.id}} id="prod_id">
+                                       <button class="add-to-cart btn btn-success" type="submit" style="margin-right: 10px;">Add to Cart</button>
+                                      </form>
+                                      {% endif%}
+                                    <a href="{% url 'product_details' i.id %}" class="btn btn-primary" role="button">See Details</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                    <!-- /.col -->
+                    
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <ul class="pagination alg-right-pad">
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+                <!-- /.row -->
+                <div>
+                    <ol class="breadcrumb">
+                        <li><a href="{% url 'home'%}">Home</a></li>
+                        <li><a href="{% url 'category'%}">Exterior</a></li>
+                        <li class="active">Wheel</li>
+                    </ol>
+                </div>
+                <!-- /.div -->
+                <div class="row">
+                    <div class="btn-group alg-right-pad">
+                        <button type="button" class="btn btn-default"><strong>3005  </strong>items</button>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                Sort Products &nbsp;
+      <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">By Price Low</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">By Price High</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">By Popularity</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">By Reviews</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    {% for w in wheel%}
+                    <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                        <div class="thumbnail product-box">
+                            <img src="{{w.product_image.url}}" alt="" style="height: 150px; width:auto" />
+                            <div class="caption">
+                                <h3><a href="{% url 'product_details' w.id %}">{{w.title}}</a></h3>
+                                <p>Price : <strong>${{w.discounted_price}}</strong>  </p>
+                                <p><a href="{% url 'product_details' w.id %}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, voluptate? </a></p>
+                                <p>
+                                    <a href="{% url 'add_to_cart'%}" class="btn btn-success" role="button">Add To Cart</a>
+                                    <a href="{% url 'product_details' w.id %}" class="btn btn-primary" role="button">See Details</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    {%endfor%}
+                   
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    
+
+    <!--Footer -->
+    <div class="col-md-12 footer-box">
+
+
+      
+            
+        </div> -->
+        <div class="row">
+            <div class="col-md-4">
+                <strong>Send a Quick Query </strong>
+                <hr>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" required="required" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" required="required" placeholder="Email address">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <textarea name="message" id="message" required="required" class="form-control" rows="3" placeholder="Message"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Submit Request</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-4">
+                <strong>Our Location</strong>
+                <hr>
+                <p>
+                     <br />
+                                    <br />
+                    <br>
+                    <br>
+                </p>
+
+                2021 www.autopartwarehouse.com | All Right Reserved by AUTOPART
+            </div>
+            <div class="col-md-4 social-box">
+                <strong>We are Social </strong>
+                <hr>
+                <a href="#"><i class="fa fa-facebook-square fa-3x "></i></a>
+                <a href="#"><i class="fa fa-twitter-square fa-3x "></i></a>
+                <a href="#"><i class="fa fa-google-plus-square fa-3x c"></i></a>
+                <a href="#"><i class="fa fa-linkedin-square fa-3x "></i></a>
+                <a href="#"><i class="fa fa-pinterest-square fa-3x "></i></a>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec nisl odio. Mauris vehicula at nunc id posuere. Curabitur nec nisl odio. Mauris vehicula at nunc id posuere. 
+                </p>
+            </div>
+        </div>
+        <hr>
+    </div>
+   
+    {%endblock main%}
+    <!--Footer end -->
+    {% block script %}
+    <script>
+      $(function () {
+
+        $('#mi-slider').catslider();
+
+      });
+    </script>
+    {% endblock script %}
+

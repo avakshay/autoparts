@@ -1,0 +1,118 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block script %}
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="{% static 'js/myscript.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+{%endblock script%}
+{%block link%}
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+{%endblock link%}    
+{%block title%}
+    Add To Cart
+{%endblock title%}    
+{%block main%}
+    
+<!-- main content -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th class="text-center">Price</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cart in carts %}
+        
+                    <tr>
+                        <td class="col-sm-8 col-md-6">
+                        <div class="media">
+                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="{{cart.product.product_image.url}}" style="width: 72px; height: 72px;"> </a>
+                            <div class="media-body">
+                                <h4 class="media-heading"><a href="#">{{cart.product.title}}</a></h4>
+                                <h5 class="media-heading"> by <a href="#">{{cart.product.brand}}</a></h5>
+                                <span>Status: </span><span class="text-success"><strong>In Stock</strong></span> 
+                            </div>
+                        </div></td>
+                        <td class="col-sm-1 col-md-1" style="text-align: center; display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        margin-left:28px;
+                        justify-content:center">
+                            <a href="" style="margin: 10px;" class="minus-cart" pid="{{cart.product.id}}">
+                                <span class="glyphicon glyphicon-minus"></span>
+                            </a>
+                            <span id="quantity">{{cart.quantity}}</span>
+                            <a href="" style="margin: 10px;" class="plus-cart" pid="{{cart.product.id}}">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </a>
+                        </td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>${{cart.product.discounted_price}}</strong></td>
+                        <td class="col-sm-1 col-md-1">
+                          <a href=""  pid="{{cart.product.id}}" class="remove-cart">
+                            <span class="glyphicon glyphicon-remove"></span> Remove
+                          </a>  
+                    </td>
+                    </tr>
+
+                    {% endfor%}
+                   
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h5>Subtotal</h5></td>
+                        <td class="text-right"><h5><strong>$<span id="amount">{{amount}}</span> </strong></h5></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h5>Estimated shipping</h5></td>
+                        <td class="text-right"><h5><strong>$50.0</strong></h5></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h3>Total</h3></td>
+                        <td class="text-right"><h3><strong>$ <strong id="totalamount">{{totalamount}}</strong></strong></h3></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>
+                        <button type="button" class="btn btn-default">
+                            <a href="{% url 'home' %}">
+
+                                <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                            </a>
+                        </button></td>
+                        <td>
+                        <button type="button" class="btn btn-success"><a href="{% url 'checkout'%}">Checkout <span class="glyphicon glyphicon-play"></span></a>
+                        </button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- main content -->
+
+
+
+         
+
+
+{%endblock main%}
